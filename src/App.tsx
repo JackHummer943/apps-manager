@@ -43,7 +43,6 @@ function App() {
   return <>
   {/* добавляем фоорму */}
   <form onSubmit={handleAdd}>
-    {/*поле для ввода */}
    <div><input type='text' name='name'></input></div>
    <br />
    <div><input type='text' name='url'></input></div>
