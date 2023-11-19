@@ -1,15 +1,7 @@
 import './App.css'
+//import ky from 'ky'
 import { FormEventHandler, useState } from 'react'
 
-
-const appsData = [1, 2, 3].map(elem => {
-  return {
-    id: elem,
-    name: `app${elem}`,
-    url: `http://app${elem}.ru`,
-    healthy: false 
-  }
-})
 
 type AppType = {
   id: number,
@@ -20,7 +12,25 @@ type AppType = {
 
 function App() {
 
-  const [apps, setApps] = useState<AppType[]>(appsData)
+  const [apps, setApps] = useState<AppType[]>([])
+  
+  // useEffect(() => {
+  //  reloadApps()
+  // }, [])
+  
+  // функция возвращает объект асинхронной задачи
+  // он неявно создастся, когда выполнится (вызовется) await
+  // const reloadApps = async () => {
+  //   try {
+  //     const apps = await ky.post('http://localhost:3000/apps').json();
+  // //   setApps(apps)
+  //   }
+  //   catch(err) {
+  //     console.error(err)
+  //   }
+  // }
+
+
  
   const handleAdd: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault()
@@ -43,9 +53,10 @@ function App() {
   return <>
   {/* добавляем фоорму */}
   <form onSubmit={handleAdd}>
-   <div><input type='text' name='name'></input></div>
+   <input type='text' name='name'></input>
    <br />
-   <div><input type='text' name='url'></input></div>
+   <input type='text' name='url'></input>
+   <br />
    <button type='submit'>Добавить</button>
   </form>
   

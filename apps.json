@@ -1,3 +1,22 @@
 {
-  "apps": []
+  "apps": [
+    {
+      "id": 1,
+      "name": "app1",
+      "url": "http://app1.ru",
+      "healthy": false
+    },
+    {
+      "id": 2,
+      "name": "app2",
+      "url": "http://app2.ru",
+      "healthy": false
+    },
+    {
+      "id": 3,
+      "name": "app3",
+      "url": "http://app3.ru",
+      "healthy": false
+    }
+  ]
 }
